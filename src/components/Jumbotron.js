@@ -9,7 +9,7 @@ function Jumbotron() {
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
           <h1 className="display-4">Employee Directory</h1>
-          <p className="lead">Search for specific employees or use the carrot on name to sort by name</p>
+          <p className="lead">Search for specific employees or click on name header to sort by name</p>
         </div>
       </div>
 

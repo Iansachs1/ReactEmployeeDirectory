@@ -1,5 +1,3 @@
-
-
 function compareNames(direction = 1) {
     return function (employeeRecord1, employeeRecord2) {
         // uncomment for ASCII char code fun!
