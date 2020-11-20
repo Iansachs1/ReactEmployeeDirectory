@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 import API from "../utils/API";
 import Search from "./Search";
+import compareNames from "../utils/compareNames";
 
 export default class ResultTable extends Component {
 
     state = {
         results: [],
-        order: "descend",
+        direction: 1,
         search: ""
     }
 
@@ -25,21 +26,13 @@ export default class ResultTable extends Component {
             .catch(err => console.log(err))
     }
 
-    filterUsers = () => {
-
-    }
-
-    changeResultOrder = (data) => {
-
-    }
-
     handleInputChange = event => {
-      const name = event.target.name;
-      const value = event.target.value;
-      this.setState({
-        [name]: value
-      });
-      console.log(this.state);
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({
+            [name]: value
+        });
+        console.log(this.state);
     };
 
     // handleFormSubmit = event => {
@@ -47,18 +40,33 @@ export default class ResultTable extends Component {
     //   // this.getEmployees(this.state.search);
     // };
 
+    sortNames = () => {
+        this.setState({ results: this.state.results.sort(compareNames(this.state.direction)) });
+        this.setState({ direction: (this.state.direction *= -1) });
+    }
+
 
     render() {
         return (
             <div className="container">
 
-                <Search searchResult={this.state.results}/>
+                <Search searchResult={this.state.results} />
 
                 <table className="table">
                     <thead className="thead-dark">
                         <tr>
                             <th scope="col">Profile Picture</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">
+                                <button
+                                    onClick={this.sortNames}
+                                    style={{
+                                        border: "none",
+                                        backgroundColor: "inherit",
+                                        color: "white"
+                                }}>
+                                    <strong>Name</strong>
+                                </button>
+                            </th>
                             <th scope="col">Phone</th>
                             <th scope="col">Email</th>
                         </tr>
