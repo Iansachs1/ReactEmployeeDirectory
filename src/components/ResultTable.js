@@ -55,6 +55,7 @@ export default class ResultTable extends Component {
 
     sortNames = () => {
         this.setState({ results: this.state.results.sort(compareNames(this.state.direction)) });
+        this.setState({ filteredResults: this.state.filteredResults.sort(compareNames(this.state.direction)) });
         this.setState({ direction: (this.state.direction *= -1) });
     }
 
