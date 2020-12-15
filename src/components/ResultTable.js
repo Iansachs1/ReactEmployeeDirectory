@@ -20,11 +20,21 @@ export default class ResultTable extends Component {
     componentDidUpdate(prevProps, prevState) {
         if(prevState.search !== this.state.search) {
             if(this.state.search !== "") {
-                const filteredRecords = this.state.results.filter(record => {
-                    return record.name.first.toLowerCase().startsWith(this.state.search) 
-                    || record.name.last.toLowerCase().startsWith(this.state.search);
+
+                const searchTerm = this.state.search.toLowerCase();
+                const searchArray = this.state.results;
+                
+                const filteredRecords = searchArray.filter(record => {
+                    return (record.name.first.toLowerCase().startsWith(searchTerm) ||
+                    record.name.last.toLowerCase().startsWith(searchTerm))
                 });
                 this.setState({ filteredResults: filteredRecords })
+            } else {
+
+                const fullResults = this.state.results;
+
+                this.setState({ filteredResults: fullResults
+                })
             }
         }
     }
