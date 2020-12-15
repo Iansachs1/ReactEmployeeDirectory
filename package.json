@@ -2,7 +2,7 @@
   "name": "employee-directory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://iansachs1.github.io/ReactEmployeeDirectory/",
+  "homepage": "https://github.com/Iansachs1/ReactEmployeeDirectory/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
