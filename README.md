@@ -16,7 +16,7 @@ This site uses randomuser.me api and react to create an employee directory. the 
   
 ## Image
   
-![Employee Directory Site](https://github.com/Iansachs1/BurgerLogger/images/BurerSite.png)
+![Employee Directory Site](https://github.com/Iansachs1/ReactEmployeeDirectory/blob/main/assets/Screenshot%202020-12-14%20214509.png)
   
 ## Usage
   
